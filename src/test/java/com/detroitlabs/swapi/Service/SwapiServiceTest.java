@@ -1,11 +1,9 @@
 package com.detroitlabs.swapi.Service;
 
 import com.detroitlabs.swapi.Model.CharacterDetails.AllCharacterInfo;
-import com.detroitlabs.swapi.Model.CharacterDetails.CharacterInfo;
+
 import com.detroitlabs.swapi.Model.CharacterDetails.Results;
 import com.detroitlabs.swapi.Model.MovieInfoAPI.AllMovieInfo;
-import com.sun.deploy.net.HttpResponse;
-import org.apache.coyote.Response;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
@@ -20,7 +18,7 @@ public class SwapiServiceTest {
 
     @Test
     public void shouldFetchMovieInfoForEmpireStrikesBack() {
-        SwapiService swapiService = new SwapiService();
+    SwapiService swapiService = new SwapiService();
         AllMovieInfo allMovieInfo = swapiService.fetchMovieInfo();
 
         Assert.assertEquals("The Empire Strikes Back", allMovieInfo.getTitle());
@@ -40,7 +38,15 @@ public class SwapiServiceTest {
         headers.add(HttpHeaders.USER_AGENT, "Spring");
         ResponseEntity<AllCharacterInfo> response = restTemplate.exchange("https://swapi.co/api/people/?search=" + "Luke Skywalker",
                 HttpMethod.GET, new HttpEntity<>(headers), AllCharacterInfo.class);
-       Assert.assertThat(200,equalTo(response.getStatusCodeValue()));
+       Assert.assertThat(response.getStatusCodeValue(),equalTo(200));
+    }
+
+    @Test
+    public void shouldFetchTatooineAsHomeworld(){
+        SwapiService swapiService = new SwapiService();
+       String actual =  swapiService.fetchPlanetName("https://swapi.co/api/planets/1/").getName();
+
+    Assert.assertThat(actual, equalTo("Tatooine"));
     }
 
 }
