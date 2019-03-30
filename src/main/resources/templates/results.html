@@ -8,12 +8,12 @@
 </head>
 <body>
 
-<div th:each="character : ${characterInfo}">
+<div th:each="characterdetail : ${characterInfo}">
 
-    <h1 th:text="${character.name}"/>
-    <p th:text="${character.gender}"/>
-    <p th:text="${character.birth_year}"/>
-    <p th:text="${character.homeworld}"/>
+    <h1 th:text="${characterdetail.name}"/>
+    <p th:text="${characterdetail.gender}"/>
+    <p th:text="${characterdetail.birth_year}"/>
+    <p th:text="${homeplanet}"/>
 </div>
 </body>
 </html>

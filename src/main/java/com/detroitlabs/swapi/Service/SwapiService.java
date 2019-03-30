@@ -6,6 +6,7 @@ import com.detroitlabs.swapi.Model.CharacterDetails.CharacterInfo;
 import com.detroitlabs.swapi.Model.CharacterDetails.Results;
 import com.detroitlabs.swapi.Model.MovieInfoAPI.AllMovieInfo;
 import com.detroitlabs.swapi.Model.MovieInfoAPI.Characters;
+import com.detroitlabs.swapi.Model.PlanetAPIInfo.PlanetInfo;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -46,4 +47,14 @@ public class SwapiService {
                 HttpMethod.GET, new HttpEntity<>(headers), AllCharacterInfo.class);
        return response.getBody().getResults();
     }
+
+    public PlanetInfo fetchPlanetName(String planetAPICall){
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add(HttpHeaders.USER_AGENT, "Spring");
+        ResponseEntity<PlanetInfo> response = restTemplate.exchange( planetAPICall+ "?format=json",
+                HttpMethod.GET, new HttpEntity<>(headers), PlanetInfo.class);
+        return response.getBody();
+    }
+
 }

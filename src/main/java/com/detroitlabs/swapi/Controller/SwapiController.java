@@ -37,6 +37,7 @@ public class SwapiController {
         Results result = swapiService.fetchInfoByName(starWarsCharacterName);
 
         mv.addObject("characterInfo", result.get(0));
+        mv.addObject("homeplanet", swapiService.fetchPlanetName(result.get(0).getHomeworld()).getName());
         mv.addObject("pageTitle", result.get(0).getName());
 
         return mv;
