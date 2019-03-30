@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Star Wars Characters</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
-<div th:each="character :${charactersNames}">
-    <p th:text="${character}">
-</div>
+<h1 th:text="${movietitle}"></h1>
 
+<form action = "showCharacterResults" method="get">
+<div th:each="characterName :${characters}">
+    <input type="submit" th:value="${characterName}" name ="characterName">
+</div>
+</form>
 </body>
 </html>

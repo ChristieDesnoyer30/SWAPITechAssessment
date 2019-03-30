@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <head th:fragment="headerfragment">
+        <title th:text="${pageTitle}">Character Name Goes Here</title>
+        <link rel="stylesheet" href="results.css"/>
+</head>
+<body>
+
+<div th:each="character : ${characterInfo}">
+
+    <h1 th:text="${character.name}"/>
+    <p th:text="${character.gender}"/>
+    <p th:text="${character.birth_year}"/>
+    <p th:text="${character.homeworld}"/>
+</div>
+</body>
+</html>
