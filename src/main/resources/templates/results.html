@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+  \
     <meta charset="UTF-8">
     <head th:fragment="headerfragment">
         <title th:text="${pageTitle}">Character Name Goes Here</title>
         <link rel="stylesheet" href="results.css"/>
+        <link rel="icon" type="image/ico" href="images/StarWars.png" />
 </head>
 <body>
 
-<div th:each="characterdetail : ${characterInfo}">
+<div th:each="characterdetail : ${characterInfo}" style="padding:2%">
 
     <h1 th:text="'Name: ' + ${characterdetail.name}"/>
-    <p th:text="'Gender: ' + ${characterdetail.gender}"/>
-    <p th:text="'Birth year:' +${characterdetail.birth_year}"/>
-    <p th:text="'Home Planet: ' +${homeplanet}"/>
+    <h2 th:text="'Gender: ' + ${characterdetail.gender}"/>
+    <h3 th:text="'Birth year:' +${characterdetail.birth_year}"/>
+    <h4 th:text="'Home Planet: ' +${homeplanet}"/>
 </div>
 </body>
 </html>

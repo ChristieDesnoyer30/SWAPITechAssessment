@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+html, body{min-height: 100%;}
 body{
     background-image: url("/images/EmpireStrikesBack.jpg");
     background-repeat:no-repeat;
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-    background-size:cover;
+    background-size:auto;
     background-position:center;
+
+}
+
+div{
+    margin: auto;
 }
 
 h1, h3{
