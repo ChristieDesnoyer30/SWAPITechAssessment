@@ -46,7 +46,7 @@ public class SwapiServiceTest {
         SwapiService swapiService = new SwapiService();
        String actual =  swapiService.fetchPlanetName("https://swapi.co/api/planets/1/").getName();
 
-    Assert.assertThat(actual, equalTo("Tatooine"));
+     Assert.assertThat(actual, equalTo("Tatooine"));
     }
 
 }

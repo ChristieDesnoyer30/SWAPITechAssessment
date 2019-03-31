@@ -26,7 +26,7 @@ public class SwapiController {
             characterName.add(swapiService.fetchCharacterName(charactersInfo).getName());
         }
         modelAndView.addObject("characters", characterName);
-        modelAndView.addObject("movietitle",swapiService.fetchMovieInfo().getTitle());
+        modelAndView.addObject("movieInfo",swapiService.fetchMovieInfo());
         return modelAndView;
     }
 

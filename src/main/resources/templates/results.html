@@ -10,10 +10,10 @@
 
 <div th:each="characterdetail : ${characterInfo}">
 
-    <h1 th:text="${characterdetail.name}"/>
-    <p th:text="${characterdetail.gender}"/>
-    <p th:text="${characterdetail.birth_year}"/>
-    <p th:text="${homeplanet}"/>
+    <h1 th:text="'Name: ' + ${characterdetail.name}"/>
+    <p th:text="'Gender: ' + ${characterdetail.gender}"/>
+    <p th:text="'Birth year:' +${characterdetail.birth_year}"/>
+    <p th:text="'Home Planet: ' +${homeplanet}"/>
 </div>
 </body>
 </html>

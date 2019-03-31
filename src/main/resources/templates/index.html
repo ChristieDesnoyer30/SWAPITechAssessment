@@ -7,12 +7,21 @@
 </head>
 <body>
 
-<h1 th:text="${movietitle}"></h1>
+<div class = "container" align="left">
+<h1 th:text="${movieInfo.title}"></h1>
+<h3 th:text="${movieInfo.opening_crawl}"></h3>
+    <h3>Select a character to find out more information:</h3>
 
 <form action = "showCharacterResults" method="get">
 <div th:each="characterName :${characters}">
     <input type="submit" th:value="${characterName}" name ="characterName">
 </div>
 </form>
+</div>
+<br>
+<audio controls="controls" autoplay>
+    <source src="/soundfiles/star-wars-theme-song.mp3" type="audio/mpeg"></source>
+</audio>
+
 </body>
 </html>

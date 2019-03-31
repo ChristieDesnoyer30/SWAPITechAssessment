@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 body{
     background-image: url("/images/EmpireStrikesBack.jpg");
-    background-repeat: no-repeat;
-    background-size:cover
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
 }
 
-h1{
+h1, h3{
     font-family: "Inconsolata";
     color:#ffffff;
 }
