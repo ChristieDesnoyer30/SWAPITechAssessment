@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpEntity;
@@ -26,8 +25,8 @@ public class SwapiServiceTest {
     private SwapiService swapiService;
 
     @Before
-    public void create(){
-        swapiService= new SwapiService();
+    public void create() {
+        swapiService = new SwapiService();
     }
 
     @Test

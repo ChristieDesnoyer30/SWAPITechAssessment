@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Star Wars Characters</title>
-    <link rel="icon" type="image/ico" href="images/StarWars.png" />
+    <link rel="icon" type="image/ico" href="images/StarWars.png"/>
     <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
-<div class = "container" align="left" style="padding:1%;">
-<h1 th:text="${movieInfo.title}"></h1>
+<div class="container" align="left" style="padding:1%;">
+    <h1 th:text="${movieInfo.title}"></h1>
 
-<h3 th:text="${movieInfo.opening_crawl}" style="padding-right:30%"></h3>
+    <h3 th:text="${movieInfo.opening_crawl}" style="padding-right:30%"></h3>
     <h3>Select a character to find out more information:</h3>
 
-<form action = "showCharacterResults" method="get">
-<div th:each="characterName :${characters}">
-    <input type="submit" th:value="${characterName}" name ="characterName">
-</div>
-</form>
+    <form action="showCharacterResults" method="get">
+        <div th:each="characterName :${characters}">
+            <input type="submit" th:value="${characterName}" name="characterName">
+        </div>
+    </form>
 </div>
 <br>
+
+<h6>Click play for the ultimate experience.</h6>
 <audio controls="controls" autoplay>
     <source src="/soundfiles/star-wars-theme-song.mp3" type="audio/mpeg"></source>
 </audio>
