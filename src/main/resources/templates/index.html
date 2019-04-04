@@ -14,11 +14,11 @@
     <h3 th:text="${movieInfo.opening_crawl}" style="padding-right:30%"></h3>
     <h3>Select a character to find out more information:</h3>
 
-    <form action="showCharacterResults" method="get">
+
         <div th:each="characterName :${characters}">
-            <input type="submit" th:value="${characterName}" name="characterName">
+            <a th:href="'/characterDeets/' + ${characterName}"><p th:text="${characterName}"/></a>
         </div>
-    </form>
+
 </div>
 <br>
 
