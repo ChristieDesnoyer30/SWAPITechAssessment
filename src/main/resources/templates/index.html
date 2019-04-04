@@ -16,14 +16,14 @@
 
 
     <div th:each="characterName :${characters}">
-        <a th:href="'/characterDeets/' + ${characterName}"><h3 th:text="${characterName}"/></a>
+        <a th:href="'/characterDeets/' + ${characterName}" class="likeabutton"><h3 th:text="${characterName}"/></a>
     </div>
 
 </div>
 
 <div>
-<h4>Click play for the ultimate experience.</h4>
-<audio controls="controls" autoplay>
+<h3>Click play for the ultimate experience.</h3>
+<audio controls="controls">
     <source src="/soundfiles/star-wars-theme-song.mp3" type="audio/mpeg"></source>
 </audio>
 </div>
