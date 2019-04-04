@@ -7,9 +7,7 @@ import com.detroitlabs.swapi.Model.MovieInfoAPI.AllMovieInfo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -19,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 
-@RunWith(MockitoJUnitRunner.class)
+
 public class SwapiServiceTest {
 
     private SwapiService swapiService;
