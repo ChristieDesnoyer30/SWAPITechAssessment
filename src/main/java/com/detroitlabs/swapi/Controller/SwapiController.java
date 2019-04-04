@@ -5,6 +5,7 @@ import com.detroitlabs.swapi.Model.MovieInfoAPI.Characters;
 import com.detroitlabs.swapi.Service.SwapiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,12 +36,12 @@ public class SwapiController {
         return modelAndView;
     }
 
-    @RequestMapping("showCharacterResults")
-    public ModelAndView showResults(ModelAndView mv, @RequestParam("characterName") String starWarsCharacterName) {
+    @RequestMapping("/characterDeets/{characterName}")
+    public ModelAndView showResults(ModelAndView mv, @PathVariable String characterName) {
         mv.setViewName("results");
 
         //Passes in the name from the clicked name on the home page and passes it in to get the information
-        Results result = swapiService.fetchInfoByName(starWarsCharacterName);
+        Results result = swapiService.fetchInfoByName(characterName);
 
         mv.addObject("characterInfo", result.get(0));
         mv.addObject("homeplanet", swapiService.fetchPlanetName(result.get(0).getHomeworld()).getName());
